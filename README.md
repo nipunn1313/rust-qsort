@@ -1,4 +1,4 @@
-# rust-qsort
+# rust-qsort [![Build Status](https://travis-ci.org/nipunn1313/rust-qsort.svg?branch=master)](https://travis-ci.org/nipunn1313/rust-qsort)
 
 A simple quicksort implementation in rust.
 
