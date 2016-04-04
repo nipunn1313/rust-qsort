@@ -27,37 +27,42 @@ fn partition(slice: &mut [i32]) -> usize {
     return partition_idx;
 }
 
-#[test]
-fn test_qsort() {
-    let mut lhs = [2, 1, 4, 3];
-    qsort(&mut lhs);
-    assert_eq!(lhs, [1, 2, 3, 4]);
-}
+#[cfg(test)]
+mod tests {
+    use super::qsort;
 
-#[test]
-fn test_qsort_already_sorted() {
-    let mut lhs = [1, 2, 3, 4];
-    qsort(&mut lhs);
-    assert_eq!(lhs, [1, 2, 3, 4]);
-}
+    #[test]
+    fn test_qsort() {
+        let mut lhs = [2, 1, 4, 3];
+        qsort(&mut lhs);
+        assert_eq!(lhs, [1, 2, 3, 4]);
+    }
 
-#[test]
-fn test_qsort_all_same() {
-    let mut lhs = [1, 1, 1, 1];
-    qsort(&mut lhs);
-    assert_eq!(lhs, [1, 1, 1, 1]);
-}
+    #[test]
+    fn test_qsort_already_sorted() {
+        let mut lhs = [1, 2, 3, 4];
+        qsort(&mut lhs);
+        assert_eq!(lhs, [1, 2, 3, 4]);
+    }
 
-#[test]
-fn test_qsort_one_elem() {
-    let mut lhs = [1];
-    qsort(&mut lhs);
-    assert_eq!(lhs, [1]);
-}
+    #[test]
+    fn test_qsort_all_same() {
+        let mut lhs = [1, 1, 1, 1];
+        qsort(&mut lhs);
+        assert_eq!(lhs, [1, 1, 1, 1]);
+    }
 
-#[test]
-fn test_qsort_no_elem() {
-    let mut lhs = [];
-    qsort(&mut lhs);
-    assert_eq!(lhs, []);
+    #[test]
+    fn test_qsort_one_elem() {
+        let mut lhs = [1];
+        qsort(&mut lhs);
+        assert_eq!(lhs, [1]);
+    }
+
+    #[test]
+    fn test_qsort_no_elem() {
+        let mut lhs = [];
+        qsort(&mut lhs);
+        assert_eq!(lhs, []);
+    }
 }
