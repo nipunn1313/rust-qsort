@@ -1,5 +1,7 @@
 extern crate getopts;
+extern crate iron;
 
+mod ironserver;
 mod qsort;
 
 use getopts::Options;
@@ -7,6 +9,7 @@ use std::env;
 use std::io;
 use std::io::BufRead;
 
+use ironserver::ironserver;
 use qsort::qsort;
 
 fn halp(opts: Options, prog_name: &String) {
@@ -33,7 +36,7 @@ fn main() {
     if matches.opt_present("stdin") {
         sort_from_stdin();
     } else {
-        // TODO(implement something more cool?)
+        ironserver();
     }
 }
 
